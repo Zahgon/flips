@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-
 import static java.util.Arrays.asList;
 
 @Component
@@ -18,11 +17,7 @@ public class SpringProfileFlipCondition implements FlipCondition {
 
     @Override
     public boolean evaluateCondition(FeatureContext featureContext, FlipAnnotationAttributes flipAnnotationAttributes) {
-        String[] expectedProfiles = flipAnnotationAttributes.getAttributeValue("activeProfiles", Utils.EMPTY_STRING_ARRAY);
-        String[] activeProfiles   = featureContext.getActiveProfilesOrEmpty();
-
-        ValidationUtils.requireNonEmpty(expectedProfiles, "activeProfiles element can not be NULL or EMPTY when using @FlipOnProfiles");
-        return isAnyActiveProfileContainedInExpectedProfile(expectedProfiles, activeProfiles);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private boolean isAnyActiveProfileContainedInExpectedProfile(String[] expectedProfiles, String[] activeProfiles) {

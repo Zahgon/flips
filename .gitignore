@@ -5,3 +5,7 @@ build/**
 classes/**
 *.iml
 target/**
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/

@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
@@ -23,13 +22,12 @@ public class FlipAnnotationProcessor {
         this.flipConditionEvaluatorFactory = flipConditionEvaluatorFactory;
     }
 
-    public FlipConditionEvaluator getFlipConditionEvaluator(Method method){
-        return getFlipConditionEvaluatorOnMethod(method);
+    public FlipConditionEvaluator getFlipConditionEvaluator(Method method) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private FlipConditionEvaluator getFlipConditionEvaluatorOnMethod(Method method) {
         logger.debug("Getting feature condition evaluator at Method level {}", method.getName());
-
         Annotation[] annotations = AnnotationUtils.getAnnotations(method);
         return buildFlipConditionEvaluator(annotations);
     }

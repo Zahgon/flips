@@ -18,7 +18,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -39,46 +38,33 @@ public class FlipBeanAdvice {
     }
 
     @Pointcut("@annotation(org.flips.annotation.FlipBean)")
-    private void flipBeanPointcut(){}
+    private void flipBeanPointcut() {
+    }
 
     @Around("flipBeanPointcut()")
     public Object inspectFlips(ProceedingJoinPoint joinPoint) throws Throwable {
-        MethodSignature signature   = (MethodSignature) joinPoint.getSignature();
-        Method method               = signature.getMethod();
-        FlipBean annotation         = AnnotationUtils.getAnnotation(method, FlipBean.class);
-        Class<?> tobeFlippedWith    = annotation.with();
-
-        if ( shouldFlipBean(method, tobeFlippedWith) ) {
-            Method targetMethod = getMethodOnTargetBean(method, tobeFlippedWith);
-            logger.info("Flipping {} of {} with {} of {}", method.getName(), method.getDeclaringClass().getName(), targetMethod.getName(), targetMethod.getDeclaringClass().getName());
-            return invokeMethod(joinPoint, tobeFlippedWith, targetMethod);
-        }
-
-        return joinPoint.proceed();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     private boolean shouldFlipBean(Method method, Class<?> tobeFlippedWith) {
-        return  flipAnnotationsStore.isFeatureEnabled(method) &&
-                (tobeFlippedWith != method.getDeclaringClass());
+        return flipAnnotationsStore.isFeatureEnabled(method) && (tobeFlippedWith != method.getDeclaringClass());
     }
 
     private Method getMethodOnTargetBean(Method method, Class<?> tobeFlippedWith) {
-        try{
+        try {
             return ClassUtils.getMethod(tobeFlippedWith, method.getName(), method.getParameterTypes());
-        }
-        catch (IllegalStateException e){
+        } catch (IllegalStateException e) {
             throw new FlipBeanFailedException("Could not invoke " + method.getName() + " with parameters " + method.getParameterTypes() + " on class " + tobeFlippedWith, e);
         }
     }
 
     private Object invokeMethod(ProceedingJoinPoint joinPoint, Class<?> tobeFlippedWith, Method targetMethod) throws Throwable {
-        try{
+        try {
             return Utils.invokeMethod(targetMethod, applicationContext.getBean(tobeFlippedWith), joinPoint.getArgs());
-        }
-        catch (InvocationTargetException ex){
-            if ( ex.getCause() instanceof FeatureNotEnabledException ){
+        } catch (InvocationTargetException ex) {
+            if (ex.getCause() instanceof FeatureNotEnabledException) {
                 throw ex.getCause();
-            }else{
+            } else {
                 throw new FlipBeanFailedException(ex);
             }
         }

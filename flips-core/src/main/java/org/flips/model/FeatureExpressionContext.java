@@ -20,15 +20,11 @@ public class FeatureExpressionContext {
         this.beanFactory = beanFactory;
     }
 
-    public ExpressionParser getExpressionParser(){
-        return new SpelExpressionParser();
+    public ExpressionParser getExpressionParser() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public EvaluationContext getEvaluationContext(){
-        StandardEvaluationContext context   = new StandardEvaluationContext();
-        context.setBeanResolver(new BeanFactoryResolver(beanFactory));
-        context.addPropertyAccessor(new BeanExpressionContextAccessor());
-
-        return context;
+    public EvaluationContext getEvaluationContext() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -2,7 +2,6 @@ package org.flips.utils;
 
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
-
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -16,24 +15,23 @@ public final class Utils {
         throw new AssertionError("No Utils instances for you!");
     }
 
-    public static boolean isEmpty(Object[] array){
-        return ObjectUtils.isEmpty(array);
+    public static boolean isEmpty(Object[] array) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static boolean isEmpty(String str){
-        return StringUtils.isEmpty(str);
+    public static boolean isEmpty(String str) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static Object emptyArray(Class clazz){
-        return Array.newInstance(clazz, 0);
+    public static Object emptyArray(Class clazz) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static Method getAccessibleMethod(Method method) {
-        if ( Modifier.isPublic(method.getModifiers()) ) return method;
-        else return null;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static Object invokeMethod(Method method, Object obj, Object... args) throws InvocationTargetException, IllegalAccessException {
-        return method.invoke(obj, args);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

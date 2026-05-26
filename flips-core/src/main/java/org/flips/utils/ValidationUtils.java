@@ -1,6 +1,5 @@
 package org.flips.utils;
 
-
 public final class ValidationUtils {
 
     private ValidationUtils() {
@@ -8,21 +7,14 @@ public final class ValidationUtils {
     }
 
     public static final String requireNonEmpty(String str, String message) {
-        boolean isEmpty = Utils.isEmpty(str);
-        if ( isEmpty )
-            throw new IllegalArgumentException(message);
-        return str;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static final <T> T[] requireNonEmpty(T[] t, String message) {
-        if ( Utils.isEmpty(t) )
-            throw new IllegalArgumentException(message);
-        return t;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static final Object requireNonNull(Object o, String message) {
-        if ( o == null )
-            throw new IllegalArgumentException(message);
-        return o;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

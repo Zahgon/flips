@@ -10,11 +10,11 @@ class EmptyFlipConditionEvaluator extends FlipConditionEvaluator {
 
     @Override
     public boolean evaluate() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean isEmpty() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -9,6 +9,6 @@ public class FlipOffCondition implements FlipCondition {
 
     @Override
     public boolean evaluateCondition(FeatureContext featureContext, FlipAnnotationAttributes flipAnnotationAttributes) {
-        return false;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

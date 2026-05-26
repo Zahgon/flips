@@ -13,33 +13,30 @@ import org.springframework.stereotype.Component;
 public class FeatureContext {
 
     private Environment environment;
+
     private FeatureExpressionContext featureExpressionContext;
 
     private static final Logger logger = LoggerFactory.getLogger(FeatureContext.class);
 
     @Autowired
     public FeatureContext(Environment environment, FeatureExpressionContext featureExpressionContext) {
-        this.environment              = environment;
+        this.environment = environment;
         this.featureExpressionContext = featureExpressionContext;
     }
 
     public <T> T getPropertyValueOrDefault(String property, Class<T> t, T defaultValue) {
-        logger.debug("Getting String property {}", property);
-        return environment.getProperty(property, t, defaultValue);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String[] getActiveProfilesOrEmpty(){
-        String[] activeProfiles = environment.getActiveProfiles();
-        logger.debug("Getting active profiles {}", activeProfiles);
-
-        return Utils.isEmpty(activeProfiles) ? Utils.EMPTY_STRING_ARRAY : activeProfiles;
+    public String[] getActiveProfilesOrEmpty() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public ExpressionParser getExpressionParser(){
-        return featureExpressionContext.getExpressionParser();
+    public ExpressionParser getExpressionParser() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public EvaluationContext getEvaluationContext(){
-        return featureExpressionContext.getEvaluationContext();
+    public EvaluationContext getEvaluationContext() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -6,17 +6,17 @@ import java.time.ZonedDateTime;
 
 public final class DateTimeUtils {
 
-    public static final ZoneId UTC  = ZoneId.of("UTC");
+    public static final ZoneId UTC = ZoneId.of("UTC");
 
     private DateTimeUtils() {
         throw new AssertionError("No DateTimeUtils instances for you!");
     }
 
-    public static ZonedDateTime getCurrentTime(){
-        return ZonedDateTime.now(UTC);
+    public static ZonedDateTime getCurrentTime() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static DayOfWeek getDayOfWeek(){
-        return getCurrentTime().getDayOfWeek();
+    public static DayOfWeek getDayOfWeek() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

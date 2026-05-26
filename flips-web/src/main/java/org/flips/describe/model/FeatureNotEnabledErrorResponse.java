@@ -5,23 +5,24 @@ import org.flips.model.Feature;
 
 public class FeatureNotEnabledErrorResponse {
 
-    private String  errorMessage;
+    private String errorMessage;
+
     private Feature feature;
 
     public FeatureNotEnabledErrorResponse(FeatureNotEnabledException ex) {
         this.errorMessage = ex.getMessage();
-        this.feature      = ex.getFeature();
+        this.feature = ex.getFeature();
     }
 
-    public String getErrorMessage(){
-        return errorMessage;
+    public String getErrorMessage() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String getFeatureName(){
-        return feature.getFeatureName();
+    public String getFeatureName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String getClassName(){
-        return feature.getClassName();
+    public String getClassName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

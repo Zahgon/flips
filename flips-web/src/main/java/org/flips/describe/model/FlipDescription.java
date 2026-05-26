@@ -2,7 +2,6 @@ package org.flips.describe.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.flips.model.Feature;
-
 import java.io.Serializable;
 
 public class FlipDescription implements Serializable {
@@ -18,12 +17,12 @@ public class FlipDescription implements Serializable {
     }
 
     @JsonProperty("feature")
-    public String getMethodName(){
-        return feature.getFeatureName();
+    public String getMethodName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @JsonProperty("class")
-    public String getClassName(){
-        return feature.getClassName();
+    public String getClassName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

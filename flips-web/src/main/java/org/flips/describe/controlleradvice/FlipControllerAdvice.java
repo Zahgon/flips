@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class FlipControllerAdvice {
 
     @ExceptionHandler(FeatureNotEnabledException.class)
-    @ResponseStatus  (HttpStatus.NOT_IMPLEMENTED)
+    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
     @ResponseBody
     public FeatureNotEnabledErrorResponse handleFeatureNotEnabledException(FeatureNotEnabledException ex) {
-        return new FeatureNotEnabledErrorResponse(ex);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @ExceptionHandler(FlipBeanFailedException.class)
-    @ResponseStatus  (HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public String handleFlipBeanFailedException(FlipBeanFailedException ex) {
-        return ex.getMessage();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -11,6 +11,6 @@ public class FlipContextConfiguration {
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

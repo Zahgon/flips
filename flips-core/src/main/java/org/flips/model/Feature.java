@@ -3,6 +3,7 @@ package org.flips.model;
 public class Feature {
 
     private String featureName;
+
     private String className;
 
     public Feature(String featureName, String className) {
@@ -10,11 +11,11 @@ public class Feature {
         this.className = className;
     }
 
-    public String getFeatureName(){
-        return featureName;
+    public String getFeatureName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public String getClassName(){
-        return className;
+    public String getClassName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }
